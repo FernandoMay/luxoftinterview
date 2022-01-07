@@ -13,46 +13,56 @@ class _PostCardState extends State<PostCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      height: 120,
-      padding: EdgeInsets.symmetric(horizontal: 18.0, vertical: 10.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.center,
+      width: MediaQuery.of(context).size.width,
+      padding: EdgeInsets.symmetric(horizontal: 10.0),
+      child: Column(
         children: [
-          CircleAvatar(
-            child: Text(
-              widget.post!.id.toString(),
-              style: TextStyle(color: Colors.white),
-            ),
-            backgroundColor: Colors.cyan,
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  widget.post!.title,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
+                child: CircleAvatar(
+                  child: Text(
+                    widget.post!.id.toString(),
+                    style: TextStyle(color: Colors.white),
                   ),
+                  backgroundColor: Colors.purple,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  widget.post!.body,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      widget.post!.title,
+                      maxLines: 3,
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
                   ),
-                ),
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      widget.post!.body,
+                      style: const TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
+          Divider(),
         ],
       ),
     );

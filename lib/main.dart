@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Luxoft Interview',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.cyan,
+        primarySwatch: Colors.purple,
       ),
       home: const Home(),
     );
