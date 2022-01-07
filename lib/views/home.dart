@@ -27,7 +27,17 @@ class _HomeState extends State<Home> {
           "Luxoft Interview",
           style: TextStyle(color: Colors.white),
         ),
-        centerTitle: true,
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(right: 16.0),
+            child: Center(
+              child: const Text(
+                "User: 2",
+                style: const TextStyle(color: Colors.white, fontSize: 16.0),
+              ),
+            ),
+          ),
+        ],
       ),
       body: SafeArea(
         child: Center(
